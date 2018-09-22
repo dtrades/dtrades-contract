@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sat Sep 22 17:26:49 2018",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sat Sep 22 19:06:32 2018",
     "version": "eosio::abi/1.0",
     "structs": [
         {
@@ -81,20 +81,20 @@
                 {
                     "name": "quantity",
                     "type": "uint64"
+                },
+                {
+                    "name": "shipping",
+                    "type": "string"
                 }
             ]
         },
         {
-            "name": "shipping",
+            "name": "received",
             "base": "",
             "fields": [
                 {
                     "name": "order_id",
                     "type": "uint64"
-                },
-                {
-                    "name": "details",
-                    "type": "string"
                 }
             ]
         },
@@ -213,8 +213,8 @@
             "ricardian_contract": ""
         },
         {
-            "name": "shipping",
-            "type": "shipping",
+            "name": "received",
+            "type": "received",
             "ricardian_contract": ""
         },
         {

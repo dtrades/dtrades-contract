@@ -1,6 +1,7 @@
 #include <eosiolib/eosio.hpp>
 #include <eosiolib/asset.hpp>
 #include <string>
+#include "eosio.token.hpp"
 
 using namespace eosio;
 using std::string;
@@ -16,9 +17,10 @@ public:
 
   [[eosio::action]] void listprod(name seller, string metadata, name escrow, asset price);
   [[eosio::action]] void editprod(uint64_t id, string metadata, name escrow, asset price);
-  [[eosio::action]] void purchase(name buyer, uint64_t product_id, uint64_t quantity);
+  [[eosio::action]] void purchase(name buyer, uint64_t product_id, uint64_t quantity, string shipping);
   [[eosio::action]] void tracking(uint64_t order_id, string details);
-  [[eosio::action]] void shipping(uint64_t order_id, string details);
+  //[[eosio::action]] void shipping(uint64_t order_id, string details);
+  [[eosio::action]] void received(uint64_t order_id);
   [[eosio::action]] void apprbuyer(uint64_t order_id);
   [[eosio::action]] void apprseller(uint64_t order_id);
 
