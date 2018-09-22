@@ -17,18 +17,23 @@ void dtrades::listprod(name seller, string metadata, name escrow, asset price) {
     p.price = price;
   });
 }
+
 void dtrades::tracking(uint64_t order_id, string details) {
 
 }
+
 void dtrades::shipping(uint64_t order_id, string details) {
 
 }
+
 void dtrades::apprbuyer(uint64_t order_id) {
 
 }
+
 void dtrades::apprseller(uint64_t order_id) {
 
 }
+
 void dtrades::purchase(name buyer, uint64_t product_id, uint64_t quantity) {
 
 }

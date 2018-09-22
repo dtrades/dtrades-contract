@@ -1,0 +1,209 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sat Sep 22 15:45:42 2018",
+    "version": "eosio::abi/1.0",
+    "structs": [
+        {
+            "name": "apprbuyer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "apprseller",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "listprod",
+            "base": "",
+            "fields": [
+                {
+                    "name": "seller",
+                    "type": "name"
+                },
+                {
+                    "name": "metadata",
+                    "type": "string"
+                },
+                {
+                    "name": "escrow",
+                    "type": "name"
+                },
+                {
+                    "name": "price",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "purchase",
+            "base": "",
+            "fields": [
+                {
+                    "name": "buyer",
+                    "type": "name"
+                },
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "shipping",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "details",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "st_orders",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "product_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "seller",
+                    "type": "name"
+                },
+                {
+                    "name": "buyer",
+                    "type": "name"
+                },
+                {
+                    "name": "escrow",
+                    "type": "name"
+                },
+                {
+                    "name": "shipping",
+                    "type": "string"
+                },
+                {
+                    "name": "tracking",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "st_products",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "seller",
+                    "type": "name"
+                },
+                {
+                    "name": "escrow",
+                    "type": "name"
+                },
+                {
+                    "name": "metadata",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "tracking",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "details",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "apprbuyer",
+            "type": "apprbuyer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "apprseller",
+            "type": "apprseller",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "listprod",
+            "type": "listprod",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "purchase",
+            "type": "purchase",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "shipping",
+            "type": "shipping",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "tracking",
+            "type": "tracking",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "orders",
+            "type": "st_orders",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "products",
+            "type": "st_products",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "abi_extensions": []
+}
