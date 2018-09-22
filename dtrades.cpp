@@ -68,7 +68,7 @@ void dtrades::purchase(name buyer, uint64_t product_id, uint64_t quantity, strin
 }
 
 void dtrades::tracking(uint64_t order_id, string details) {
-  auto order = orders.get(order_id, "invalid order id");
+  const auto& order = orders.get(order_id, "invalid order id");
   require_auth(order.seller);
   eosio_assert(order.shipping != "", "no shipping details");
   orders.modify( order, _self, [&]( auto& o ) {
@@ -87,7 +87,7 @@ void dtrades::tracking(uint64_t order_id, string details) {
 // }
 
 void dtrades::received(uint64_t order_id) {
-  auto order = orders.get(order_id, "invalid order id");
+  const auto& order = orders.get(order_id, "invalid order id");
   require_auth(order.buyer);
   orders.modify( order, _self, [&]( auto& o ) {
     o.status = "Received";
@@ -104,7 +104,7 @@ void dtrades::received(uint64_t order_id) {
 }
 
 void dtrades::apprbuyer(uint64_t order_id) {
-  auto order = orders.get(order_id, "invalid order id");
+  const auto& order = orders.get(order_id, "invalid order id");
   require_auth(order.escrow);
   orders.modify( order, _self, [&]( auto& o ) {
     o.status = "Dispute returned to Buyer";
@@ -121,7 +121,7 @@ void dtrades::apprbuyer(uint64_t order_id) {
 }
 
 void dtrades::apprseller(uint64_t order_id) {
-  auto order = orders.get(order_id, "invalid order id");
+  const auto& order = orders.get(order_id, "invalid order id");
   require_auth(order.escrow);
   orders.modify( order, _self, [&]( auto& o ) {
     o.status = "Dispute paid to Seller";
