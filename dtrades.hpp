@@ -15,11 +15,12 @@ public:
   orders(_self, _self){}
 
   [[eosio::action]] void listprod(name seller, string metadata, name escrow, asset price);
+  [[eosio::action]] void editprod(uint64_t id, string metadata, name escrow, asset price);
+  [[eosio::action]] void purchase(name buyer, uint64_t product_id, uint64_t quantity);
   [[eosio::action]] void tracking(uint64_t order_id, string details);
   [[eosio::action]] void shipping(uint64_t order_id, string details);
   [[eosio::action]] void apprbuyer(uint64_t order_id);
   [[eosio::action]] void apprseller(uint64_t order_id);
-  [[eosio::action]] void purchase(name buyer, uint64_t product_id, uint64_t quantity);
 
 private:
   // Helper Structs
@@ -38,6 +39,8 @@ private:
   struct [[eosio::table]] st_orders {
     uint64_t id;
     uint64_t product_id;
+    uint64_t quantity;
+    asset    total_price;
     name     seller;
     name     buyer;
     name     escrow;

@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sat Sep 22 15:45:42 2018",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sat Sep 22 17:26:49 2018",
     "version": "eosio::abi/1.0",
     "structs": [
         {
@@ -19,6 +19,28 @@
                 {
                     "name": "order_id",
                     "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "editprod",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "metadata",
+                    "type": "string"
+                },
+                {
+                    "name": "escrow",
+                    "type": "name"
+                },
+                {
+                    "name": "price",
+                    "type": "asset"
                 }
             ]
         },
@@ -87,6 +109,14 @@
                 {
                     "name": "product_id",
                     "type": "uint64"
+                },
+                {
+                    "name": "quantity",
+                    "type": "uint64"
+                },
+                {
+                    "name": "total_price",
+                    "type": "asset"
                 },
                 {
                     "name": "seller",
@@ -165,6 +195,11 @@
         {
             "name": "apprseller",
             "type": "apprseller",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "editprod",
+            "type": "editprod",
             "ricardian_contract": ""
         },
         {
