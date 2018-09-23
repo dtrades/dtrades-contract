@@ -23,6 +23,7 @@ public:
   [[eosio::action]] void received(uint64_t order_id);
   [[eosio::action]] void apprbuyer(uint64_t order_id);
   [[eosio::action]] void apprseller(uint64_t order_id);
+  [[eosio::action]] void delorder(uint64_t order_id);
 
 private:
   // Helper Structs

@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sat Sep 22 19:06:32 2018",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sun Sep 23 11:04:00 2018",
     "version": "eosio::abi/1.0",
     "structs": [
         {
@@ -14,6 +14,16 @@
         },
         {
             "name": "apprseller",
+            "base": "",
+            "fields": [
+                {
+                    "name": "order_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delorder",
             "base": "",
             "fields": [
                 {
@@ -195,6 +205,11 @@
         {
             "name": "apprseller",
             "type": "apprseller",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delorder",
+            "type": "delorder",
             "ricardian_contract": ""
         },
         {

@@ -137,8 +137,14 @@ void dtrades::apprseller(uint64_t order_id) {
   { _self, order.seller, asset(payment,S(4,EOS)), "Disputed Purchase from DTRADES" } );
 }
 
+void dtrades::delorder(uint64_t order_id) {
+  require_auth(_self);
+
+  const auto& order = orders.get(order_id, "invalid order id");
+  orders.erase(order);
+}
 
 
 EOSIO_ABI(dtrades,
-  (listprod)(editprod)(purchase)(tracking)(received)(apprbuyer)(apprseller)
+  (listprod)(editprod)(purchase)(tracking)(received)(apprbuyer)(apprseller)(delorder)
 )
